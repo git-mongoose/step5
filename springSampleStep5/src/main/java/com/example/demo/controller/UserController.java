@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
 
+/**
+ * ユーザー情報 Controller
+ */
 @Controller
 public class UserController {
 	@Autowired
@@ -43,6 +46,8 @@ public class UserController {
 	   */
 	@GetMapping("/user/{id}")
 	public String displayView(@PathVariable Long id, Model model) {
+		User user = userService.findById(id);
+		model.addAttribute("userData", user);
 		return "user/view";
 	}
 }
