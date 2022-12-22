@@ -17,11 +17,12 @@ import jakarta.persistence.Table;
 //import javax.persistence.Table;
 
 import lombok.Data;
-
+/**
+ * ユーザー情報Entity
+ */
 @Entity
 @Data
 @Table(name = "user")
-
 public class User implements Serializable{
 /**
  * ID
